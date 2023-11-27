@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -25,18 +25,18 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
- {
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
-        -- defaults 
+        -- defaults
         "vim",
         "lua",
 
-        -- web dev 
+        -- web dev
         -- "html",
         -- "css",
         -- "javascript",
@@ -48,7 +48,7 @@ local plugins = {
         "python",
         "go",
 
-       -- low level
+        -- low level
         "c",
       },
     },
@@ -68,11 +68,48 @@ local plugins = {
     end,
   },
 
+  -- Project Manager
+  {
+    "charludo/projectmgr.nvim",
+    lazy = false, -- important!
+    config = function()
+      require("projectmgr").setup {
+        session = { enabled = true, file = ".git/Session.vim" },
+      }
+    end,
+  },
+  -- Markdown viewer
+  {
+    "toppair/peek.nvim",
+    build = "deno task --quiet build:fast",
+    keys = {
+      {
+        "<leader>op",
+        function()
+          local peek = require "peek"
+          if peek.is_open() then
+            peek.close()
+          else
+            peek.open()
+          end
+        end,
+        desc = "Peek (Markdown Preview)",
+      },
+    },
+    opts = { theme = "dark", app = "browser" },
+  },
+  -- Lazygit plugin
+  {
+    "kdheepak/lazygit.nvim",
+    -- optional for floating window border decoration
+    -- dependencies = {
+    --   "nvim-lua/plenary.nvim",
+    -- },
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
 
   -- All NvChad plugins are lazy-loaded by default
   -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`

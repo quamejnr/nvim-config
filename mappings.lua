@@ -20,5 +20,11 @@ M.general = {
     [">"] = { ">gv", "indent"},
   },
 }
+-- Project Manager
+M.projects = {
+  n = {
+    ["<leader>fp"] = { "<cmd> ProjectMgr<CR>", "Open Projects"}
+    },
+}
 
 return M
