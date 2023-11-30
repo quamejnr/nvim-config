@@ -35,6 +35,11 @@ local plugins = {
         -- defaults
         "vim",
         "lua",
+        "markdown",
+        "proto",
+        "csv",
+        "gomod",
+        "gosum",
 
         -- web dev
         -- "html",
@@ -74,7 +79,7 @@ local plugins = {
     lazy = false, -- important!
     config = function()
       require("projectmgr").setup {
-        session = { enabled = true, file = ".git/Session.vim" },
+        session = { enabled = true, file = "Session.vim" },
       }
     end,
   },
@@ -98,15 +103,39 @@ local plugins = {
     },
     opts = { theme = "dark", app = "browser" },
   },
+  {
+    "ellisonleao/glow.nvim",
+    config = true,
+    cmd = "Glow",
+    keys = {
+      {
+        "<leader>og",
+        "<cmd>Glow<CR>",
+        desc = "Markdown",
+      },
+    },
+  },
   -- Lazygit plugin
   {
     "kdheepak/lazygit.nvim",
+    lazy = false,
     -- optional for floating window border decoration
-    -- dependencies = {
-    --   "nvim-lua/plenary.nvim",
-    -- },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
   },
-
+  -- Neogit
+  {
+    "NeogitOrg/neogit",
+    lazy = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- required
+      "nvim-telescope/telescope.nvim", -- optional
+      "sindrets/diffview.nvim", -- optional
+      "ibhagwan/fzf-lua", -- optional
+    },
+    config = true,
+  },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",

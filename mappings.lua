@@ -27,4 +27,11 @@ M.projects = {
     },
 }
 
+-- Markdown Glow
+-- M.glow = {
+--   n = {
+--     ["<leader>og"] = { "<cmd> Glow<CR>", "Open Glow"}
+--   }
+-- }
+
 return M
