@@ -13,7 +13,7 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
     "python",
-    "go"
+    "go",
   },
   indent = {
     enable = true,
@@ -36,7 +36,7 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
-    
+
     -- python
     "black",
     "autopep8",
@@ -49,7 +49,9 @@ M.nvimtree = {
   git = {
     enable = true,
   },
-
+  view = {
+    side = "right",
+  },
   renderer = {
     highlight_git = true,
     icons = {
