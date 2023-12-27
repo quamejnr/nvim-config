@@ -74,15 +74,15 @@ local plugins = {
   },
 
   -- Project Manager
-  {
-    "charludo/projectmgr.nvim",
-    lazy = false, -- important!
-    config = function()
-      require("projectmgr").setup {
-        session = { enabled = true, file = "Session.vim" },
-      }
-    end,
-  },
+  -- {
+  --   "charludo/projectmgr.nvim",
+  --   lazy = false, -- important!
+  --   config = function()
+  --     require("projectmgr").setup {
+  --       session = { enabled = true, file = "Session.vim" },
+  --     }
+  --   end,
+  -- },
   -- Markdown viewer
   {
     "toppair/peek.nvim",
@@ -125,17 +125,17 @@ local plugins = {
     },
   },
   -- Neogit
-  {
-    "NeogitOrg/neogit",
-    lazy = false,
-    dependencies = {
-      "nvim-lua/plenary.nvim", -- required
-      "nvim-telescope/telescope.nvim", -- optional
-      "sindrets/diffview.nvim", -- optional
-      "ibhagwan/fzf-lua", -- optional
-    },
-    config = true,
-  },
+  -- {
+  --   "NeogitOrg/neogit",
+  --   lazy = false,
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim", -- required
+  --     "nvim-telescope/telescope.nvim", -- optional
+  --     "sindrets/diffview.nvim", -- optional
+  --     "ibhagwan/fzf-lua", -- optional
+  --   },
+  --   config = true,
+  -- },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
