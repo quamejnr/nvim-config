@@ -4,34 +4,21 @@ local M = {}
 -- Disable keymaps
 M.disabled = {
   n = {
-    ["<C-c>"] = ""
-  }
+    ["<C-c>"] = "",
+  },
 }
 
 -- Custom bindings
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
-    ["<C-f>"] = { "<cmd>silent !tmux neww tmux-sessionizer<CR>" },
-
+    -- ["<C-f>"] = { "<cmd>silent !tmux new tmux-sessionizer<CR>" },
+    ["<leader>q"] = { "<cmd>Trouble workspace_diagnostics<CR>" },
   },
 
   v = {
-    [">"] = { ">gv", "indent"},
+    [">"] = { ">gv", "indent" },
   },
 }
--- Project Manager
-M.projects = {
-  n = {
-    ["<leader>fp"] = { "<cmd> ProjectMgr<CR>", "Open Projects"}
-    },
-}
-
--- Markdown Glow
--- M.glow = {
---   n = {
---     ["<leader>og"] = { "<cmd> Glow<CR>", "Open Glow"}
---   }
--- }
 
 return M

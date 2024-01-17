@@ -72,37 +72,6 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
-
-  -- Project Manager
-  -- {
-  --   "charludo/projectmgr.nvim",
-  --   lazy = false, -- important!
-  --   config = function()
-  --     require("projectmgr").setup {
-  --       session = { enabled = true, file = "Session.vim" },
-  --     }
-  --   end,
-  -- },
-  -- Markdown viewer
-  {
-    "toppair/peek.nvim",
-    build = "deno task --quiet build:fast",
-    keys = {
-      {
-        "<leader>op",
-        function()
-          local peek = require "peek"
-          if peek.is_open() then
-            peek.close()
-          else
-            peek.open()
-          end
-        end,
-        desc = "Peek (Markdown Preview)",
-      },
-    },
-    opts = { theme = "dark", app = "browser" },
-  },
   {
     "ellisonleao/glow.nvim",
     config = true,
@@ -124,29 +93,42 @@ local plugins = {
       "nvim-lua/plenary.nvim",
     },
   },
-  -- Neogit
-  -- {
-  --   "NeogitOrg/neogit",
-  --   lazy = false,
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim", -- required
-  --     "nvim-telescope/telescope.nvim", -- optional
-  --     "sindrets/diffview.nvim", -- optional
-  --     "ibhagwan/fzf-lua", -- optional
-  --   },
-  --   config = true,
-  -- },
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-
-  -- All NvChad plugins are lazy-loaded by default
-  -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
-  -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
-  -- {
-  --   "mg979/vim-visual-multi",
-  --   lazy = false,
-  -- }
+  -- Raycast plugin for creating code snippets
+  {
+    "TobinPalmer/rayso.nvim",
+    cmd = { "Rayso" },
+    config = function()
+      require("rayso").setup {}
+    end,
+  },
+  -- Todo plugin
+  {
+    "folke/todo-comments.nvim",
+    lazy = false,
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
+  },
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup {
+        -- Configuration here, or leave empty to use defaults
+      }
+    end,
+  },
+  {
+    "simrat39/symbols-outline.nvim",
+    lazy = false,
+    opts = {},
+  },
+  {
+    "folke/trouble.nvim",
+    lazy = false,
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {},
+  },
 }
 
 return plugins
