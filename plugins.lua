@@ -129,6 +129,12 @@ local plugins = {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {},
   },
+  {
+    -- Treesitter context
+    "nvim-treesitter/nvim-treesitter-context",
+    lazy = false,
+    opts = {},
+  },
 }
 
 return plugins
