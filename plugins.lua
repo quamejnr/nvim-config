@@ -36,6 +36,7 @@ local plugins = {
         "vim",
         "lua",
         "markdown",
+        "markdown_inline",
         "proto",
         "csv",
         "gomod",
