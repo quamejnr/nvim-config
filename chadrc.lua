@@ -7,6 +7,19 @@ local highlights = require "custom.highlights"
 M.ui = {
   theme = "gruvchad",
   theme_toggle = { "gruvchad", "one_light" },
+  changed_themes = {
+    gruvchad = {
+      base_30 = {
+        folder_bg = "#89b482",
+        green = "#89b482",
+        blue = "#89b482",
+        statusline_bg = "#191b1c"
+      },
+      base_16 = {
+        base00 = "#191b1c",
+      },
+    },
+  },
 
   hl_override = highlights.override,
   hl_add = highlights.add,
@@ -14,7 +27,7 @@ M.ui = {
   statusline = {
     theme = "vscode",
     separator_style = "default",
-  }
+  },
 }
 
 M.plugins = "custom.plugins"
