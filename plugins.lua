@@ -93,7 +93,15 @@ local plugins = {
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
+    keys = {
+      {
+        "<leader>lg",
+        "<cmd>LazyGit<CR>",
+        desc = "LazyGit",
+      },
+    }
   },
+
   -- Raycast plugin for creating code snippets
   {
     "TobinPalmer/rayso.nvim",
