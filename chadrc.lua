@@ -1,6 +1,7 @@
 ---@type ChadrcConfig
 local M = {}
 
+
 -- Path to overriding theme and highlights files
 local highlights = require "custom.highlights"
 
@@ -13,10 +14,10 @@ M.ui = {
         folder_bg = "#89b482",
         green = "#89b482",
         blue = "#89b482",
-        statusline_bg = "#191b1c"
+        statusline_bg = "#191c1c",
       },
       base_16 = {
-        base00 = "#191b1c",
+        base00 = "#191c1c",
       },
     },
   },
@@ -26,7 +27,6 @@ M.ui = {
 
   statusline = {
     theme = "vscode_colored",
-    separator_style = "default",
   },
 }
 

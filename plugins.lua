@@ -56,6 +56,7 @@ local plugins = {
 
         -- low level
         "c",
+        "zig",
       },
     },
   },
@@ -99,7 +100,7 @@ local plugins = {
         "<cmd>LazyGit<CR>",
         desc = "LazyGit",
       },
-    }
+    },
   },
 
   -- Raycast plugin for creating code snippets
