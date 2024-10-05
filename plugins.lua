@@ -139,11 +139,42 @@ local plugins = {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {},
   },
+  -- zen
+  {
+    "folke/zen-mode.nvim",
+    lazy = false,
+  },
   {
     -- Treesitter context
     "nvim-treesitter/nvim-treesitter-context",
     lazy = false,
     opts = {},
+  },
+
+  {
+    -- Make sure to setup it properly if you have lazy=true
+    "MeanderingProgrammer/render-markdown.nvim",
+    lazy = false,
+  },
+  -- Leetcode
+
+  {
+    "kawre/leetcode.nvim",
+    build = ":TSUpdate html",
+    lazy = false,
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim", -- required by telescope
+      "MunifTanjim/nui.nvim",
+
+      -- optional
+      "nvim-treesitter/nvim-treesitter",
+      -- "rcarriga/nvim-notify",
+      "nvim-tree/nvim-web-devicons",
+    },
+    opts = {
+      -- configuration goes here
+    },
   },
 }
 
