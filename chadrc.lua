@@ -27,6 +27,15 @@ M.ui = {
 
   statusline = {
     theme = "vscode_colored",
+    overriden_modules = function(modules)
+      modules[2] = (function()
+        local name = vim.fn.expand("%:.")
+        if name == "" then
+          return "%##  "
+        end
+        return "%##  " .. name .. "  "
+      end)()
+    end,
   },
 }
 
