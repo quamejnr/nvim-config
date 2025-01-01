@@ -43,13 +43,13 @@ local plugins = {
         "gosum",
 
         -- web dev
-        -- "html",
-        -- "css",
-        -- "javascript",
-        -- "typescript",
-        -- "tsx",
+        "html",
+        "css",
+        "javascript",
+        "typescript",
+        "tsx",
         "json",
-        -- "vue", "svelte",
+        "vue", "svelte",
 
         "python",
         "go",

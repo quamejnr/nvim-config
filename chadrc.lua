@@ -12,13 +12,14 @@ M.ui = {
     gruvchad = {
       base_30 = {
         folder_bg = "#89b482",
-        green = "#89b482",
-        blue = "#89b482",
-        statusline_bg = "#191c1c",
+        green = "#89cb82",
+        blue = "#89cb82",
+        statusline_bg = "#131313",
       },
       base_16 = {
-        base00 = "#191c1c",
       },
+        base00 = "#131313",
+        -- base02 = "#131313",
     },
   },
 
