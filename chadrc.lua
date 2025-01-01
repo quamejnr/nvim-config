@@ -15,6 +15,7 @@ M.ui = {
         green = "#89cb82",
         blue = "#89cb82",
         statusline_bg = "#131313",
+        darker_black = "#1a1a1a",
       },
       base_16 = {
         base00 = "#131313",
