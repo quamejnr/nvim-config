@@ -6,7 +6,7 @@
 --   command = "tabdo wincmd =",
 -- })
 
-vim.wo.relativenumber = true
+-- vim.wo.relativenumber = true
 
 -- Override unmodified buffers
 -- vim.api.nvim_create_autocmd({ "BufAdd", "BufEnter", "tabnew" }, {
@@ -16,3 +16,11 @@ vim.wo.relativenumber = true
 --     end, vim.t.bufs)
 --   end,
 -- })
+
+
+local opt = vim.opt
+
+-- Indenting
+opt.shiftwidth = 4
+opt.tabstop = 4
+opt.softtabstop = 4

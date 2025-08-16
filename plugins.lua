@@ -49,7 +49,8 @@ local plugins = {
         "typescript",
         "tsx",
         "json",
-        "vue", "svelte",
+        "vue",
+        "svelte",
 
         "python",
         "go",
@@ -74,18 +75,18 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
-  {
-    "ellisonleao/glow.nvim",
-    config = true,
-    cmd = "Glow",
-    keys = {
-      {
-        "<leader>og",
-        "<cmd>Glow<CR>",
-        desc = "Markdown",
-      },
-    },
-  },
+  -- {
+  --   "ellisonleao/glow.nvim",
+  --   config = true,
+  --   cmd = "Glow",
+  --   keys = {
+  --     {
+  --       "<leader>og",
+  --       "<cmd>Glow<CR>",
+  --       desc = "Markdown",
+  --     },
+  --   },
+  -- },
   -- Lazygit plugin
   {
     "kdheepak/lazygit.nvim",
@@ -140,10 +141,10 @@ local plugins = {
     opts = {},
   },
   -- zen
-  {
-    "folke/zen-mode.nvim",
-    lazy = false,
-  },
+  -- {
+  --   "folke/zen-mode.nvim",
+  --   lazy = false,
+  -- },
   {
     -- Treesitter context
     "nvim-treesitter/nvim-treesitter-context",
@@ -156,26 +157,59 @@ local plugins = {
     "MeanderingProgrammer/render-markdown.nvim",
     lazy = false,
   },
+  -- debugger
+  -- {
+  --   "rcarriga/nvim-dap-ui",
+  --   dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio", "leoluz/nvim-dap-go" },
+  --   lazy = false,
+  --   config = function()
+  --     require("dap-go").setup()
+  --
+  --     local dap, dapui = require "dap", require "dapui"
+  --
+  --     dapui.setup()
+  --
+  --     dap.listeners.before.attach.dapui_config = function()
+  --       dapui.open()
+  --     end
+  --     dap.listeners.before.launch.dapui_config = function()
+  --       dapui.open()
+  --     end
+  --     dap.listeners.before.event_terminated.dapui_config = function()
+  --       dapui.close()
+  --     end
+  --     dap.listeners.before.event_exited.dapui_config = function()
+  --       dapui.close()
+  --     end
+  --   end,
+  --   keys = {
+  --     { "<leader>tb", "<cmd>DapToggleBreakpoint<cr>", desc = "Toggle debugger breakpoint" },
+  --     { "<leader>tc", "<cmd>DapContinue<cr>",         desc = "Continue running debugger" },
+  --     { "<leader>tx", "<cmd>DapTerminate<cr>",        desc = "Kill Debugger" },
+  --     { "<leader>ts", "<cmd>DapStepOver<cr>",         desc = "Step over Debugger" },
+  --     { "<leader>tu", "<cmd>DapToggleRepl<cr>",       desc = "open Debugger Repl" },
+  --   },
+  -- },
   -- Leetcode
 
-  {
-    "kawre/leetcode.nvim",
-    build = ":TSUpdate html",
-    lazy = false,
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-      "nvim-lua/plenary.nvim", -- required by telescope
-      "MunifTanjim/nui.nvim",
-
-      -- optional
-      "nvim-treesitter/nvim-treesitter",
-      -- "rcarriga/nvim-notify",
-      "nvim-tree/nvim-web-devicons",
-    },
-    opts = {
-      -- configuration goes here
-    },
-  },
+  -- {
+  --   "kawre/leetcode.nvim",
+  --   build = ":TSUpdate html",
+  --   lazy = false,
+  --   dependencies = {
+  --     "nvim-telescope/telescope.nvim",
+  --     "nvim-lua/plenary.nvim", -- required by telescope
+  --     "MunifTanjim/nui.nvim",
+  --
+  --     -- optional
+  --     "nvim-treesitter/nvim-treesitter",
+  --     -- "rcarriga/nvim-notify",
+  --     "nvim-tree/nvim-web-devicons",
+  --   },
+  --   opts = {
+  --     -- configuration goes here
+  --   },
+  -- },
 }
 
 return plugins
